@@ -1,0 +1,15 @@
+resources:
+- name: {{cookiecutter.app_name}}
+  type: container.v1.cluster
+  properties:
+    zone: {{cookiecutter.zone}}
+    cluster:
+      name: {{cookiecutter.app_name}}
+      description: {{cookiecutter.app_name}} {{cookiecutter.project_short_description}}
+      initialNodeCount: {{cookiecutter.nodes}}
+      nodeConfig:
+        oauthScopes:
+        - https://www.googleapis.com/auth/devstorage.read_only
+      masterAuth:
+        username: {{cookiecutter.master_user_name}}
+        password: {{cookiecutter.master_password}}

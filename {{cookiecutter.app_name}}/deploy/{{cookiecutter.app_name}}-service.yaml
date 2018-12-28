@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{cookiecutter.app_name}}-server
+  labels:
+    visualize: "true"
+    name: server
+spec:
+  ports:
+  - port: 50051
+    targetPort: 50051
+  selector:
+    role: {{cookiecutter.app_name}}-server
+  type: LoadBalancer

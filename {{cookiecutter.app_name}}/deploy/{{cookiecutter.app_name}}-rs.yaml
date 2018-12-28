@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{cookiecutter.app_name}}
+spec:
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        role: {{cookiecutter.app_name}}-server
+        visualize: "true"
+        name: server
+        uses: redis
+    spec:
+      containers:
+      - name: {{cookiecutter.app_name}}
+        image: gcr.io/${PROJECT}/server
+        imagePullPolicy: Always
+        env:
+        - name: REDIS_ADDRESS
+          value: redis:6379
+        ports:
+        - containerPort: 50051
