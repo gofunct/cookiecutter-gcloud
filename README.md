@@ -1,4 +1,4 @@
-# cookiecutter-k8s
+# cookiecutter-gcloud
 
 Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter), Cookiecutter Golang is a framework for jumpstarting production-ready go projects quickly.
 
@@ -24,7 +24,7 @@ $ brew install cookiecutter
 
 Finally, to run it based on this template, type:
 ```console
-$ cookiecutter https://github.com/gofunct/cookiecutter-k8s
+$ cookiecutter https://github.com/gofunct/cookiecutter-gcloud.git
 ```
 
 ## options
